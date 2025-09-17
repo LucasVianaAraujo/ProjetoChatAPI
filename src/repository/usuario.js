@@ -72,6 +72,20 @@ export async function SalaPermissao(usuario_id, sala) {
     if (info.length > 0) {
         return { erro: "Você já está na sala, bobo" }
     }
+
+    const comando1 = ` 
+    INSERT INTO salaPermissao (sala_id,usuario_id,aprovado)
+    VALUES
+    (?,?,?)
+    `
+
+    const [info1] = await connection.query(comando1, [
+        sala,
+        usuario_id,
+        false
+    ])
+
+    return { info1 }
 }
 
 export async function AprovarUsuario(sala, usuario_id) {

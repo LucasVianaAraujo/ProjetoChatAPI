@@ -13,8 +13,8 @@ endpoint.post('/usuario', async (req, resp) => {
     const registro = await CriarUsuario(NovoUsuario);
     resp.send(
         {
-            registro: (registro),
-            mensagem: "Usuário Enviado!"
+            mensagem: "Usuário Enviado!",
+            registro: (registro)
         });
 })
 
