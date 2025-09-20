@@ -8,5 +8,3 @@ const connection = await mysql.createConnection({
 })
 
 export { connection }
-
-// subindo
